@@ -21,9 +21,11 @@ async function createPost (state, payload, blockInfo, context) {
         },
         author: payload.data.author,
         title: payload.data.title,
+        url: payload.data.url,
         content: payload.data.content,
         threshold: payload.data.threshold,
         tag: payload.data.tag,
+        donationacc: payload.data.donationacc,
         postConfirmed: true
       }
     )

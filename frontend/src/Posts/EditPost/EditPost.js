@@ -5,7 +5,10 @@ class EditPost extends Component {
   state = {
     title: this.props.post.title,
     content: this.props.post.content,
-    tag: this.props.post.tag
+    url: this.props.post.url,
+    tag: this.props.post.tag,
+    threshold: this.props.post.threshold,
+    donationacc: this.props.post.donationacc
   }
 
   handleOnChange = (event, field) => {
@@ -35,6 +38,14 @@ class EditPost extends Component {
             value={this.state.content}
             placeholder='Content'
           />
+          <textarea
+            className='margin-bottom-15'
+            name='url'
+            rows="1"
+            onChange={(e) => this.handleOnChange(e, 'url')}
+            value={this.state.url}
+            placeholder='Image URL'
+          />
           <input
             className='margin-bottom-15'
             name='tag'
@@ -48,6 +59,13 @@ class EditPost extends Component {
             onChange={(e) => this.handleOnChange(e, 'threshold')}
             value={this.state.threshold}
             placeholder='Min votes required'
+          />
+          <input
+            className='margin-bottom-15'
+            name='donationacc'
+            onChange={(e) => this.handleOnChange(e, 'donationacc')}
+            value={this.state.donationacc}
+            placeholder='Donate to this account'
           />
           <button
             onClick={this.handlePostSave}
@@ -81,6 +99,7 @@ EditPost.propTypes = {
     title: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
+    donationacc: PropTypes.string.isRequired,
     likes: PropTypes.number.isRequired
   }).isRequired,
   savePost: PropTypes.func.isRequired,

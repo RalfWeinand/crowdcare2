@@ -13,7 +13,9 @@ try {
     author: String,
     title: String,
     content: String,
+    url: String,
     tag: String,
+    donationacc: String,
     likes: {
       type: Number,
       default: 0
