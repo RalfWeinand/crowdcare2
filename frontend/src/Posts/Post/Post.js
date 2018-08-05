@@ -66,7 +66,7 @@ class Post extends Component {
               <Grid item md={5}>
                 <Card>
                   <CardContent>
-                    <img src={this.props.post.url}/>
+                    <img style={{maxWidth: "800px"}} src={this.props.post.url}/>
                   </CardContent>
                 </Card>
               </Grid>
